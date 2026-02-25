@@ -1,3 +1,4 @@
+/* RESET GENERAL */
 * {
     margin: 0;
     padding: 0;
@@ -5,82 +6,90 @@
 }
 
 body {
-    font-family: 'Arial', sans-serif;
+    font-family: 'Segoe UI', Arial, sans-serif;
     background-color: #05070a;
     color: white;
-    overflow: hidden; /* Evita scroll ya que usamos pestañas */
+    overflow: hidden; /* Mantenemos las pestañas fijas sin scroll */
 }
 
-/* --- NAVEGACIÓN --- */
+/* NAVEGACIÓN */
 .header_nav {
     background-color: #6a96f9;
     padding: 10px 5%;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
 }
+
 .nav { display: flex; justify-content: space-between; align-items: center; }
 .nav_brand { display: flex; align-items: center; gap: 10px; }
-.nav_logo_small { width: 50px; }
-.nav_title { color: black; font-weight: bold; font-size: 1.4rem; }
+.nav_logo_small { width: 45px; }
+.nav_title { color: black; font-weight: bold; font-size: 1.3rem; }
+.nav_subtitle { color: white; font-size: 0.8rem; display: block; }
 .nav_menu { display: flex; list-style: none; gap: 30px; }
-.nav_link { text-decoration: none; color: white; font-weight: bold; }
+.nav_link { text-decoration: none; color: white; font-weight: bold; transition: 0.3s; }
 .nav_link:hover { color: black; }
 
-/* --- LÓGICA DE PESTAÑAS --- */
+/* LÓGICA DE PESTAÑAS */
 .pestaña {
-    display: none; /* Ocultas por defecto */
-    height: 90vh;
-    padding: 50px;
+    display: none; /* Oculto */
+    height: 100vh;
+    width: 100%;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    animation: fadeIn 0.5s ease;
+    padding: 100px 5% 20px 5%;
+    animation: fadeEffect 0.6s;
 }
 
-.pestaña.active {
-    display: flex; /* Solo la activa se ve */
+.pestaña.active { display: flex; }
+
+@keyframes fadeEffect {
+    from { opacity: 0; }
+    to { opacity: 1; }
 }
 
-@keyframes fadeIn {
-    from { opacity: 0; transform: translateY(10px); }
-    to { opacity: 1; transform: translateY(0); }
-}
+.pestaña_titulo { font-size: 3rem; margin-bottom: 40px; text-align: center; }
+.pestaña_titulo span { color: #6a96f9; }
 
-/* --- HOME LAYOUT --- */
-.main_title { font-size: 3rem; text-align: center; margin-bottom: 40px; }
-.main_title span { color: #6a96f9; }
-
-.home_layout { display: flex; align-items: center; justify-content: space-around; width: 100%; }
-
-.pc_container { transition: transform 0.4s ease; }
-.img_pc_main { width: 550px; height: auto; }
-
-/* Efecto Agrandar PC */
-.pc_container:hover {
-    transform: scale(1.1);
-}
-
+/* HOME LAYOUT */
+.home_layout { display: flex; align-items: center; justify-content: space-between; width: 100%; }
 .column { width: 25%; display: flex; flex-direction: column; gap: 20px; }
 
-/* Efecto Movimiento Globitos */
+.pc_wrap { transition: transform 0.4s ease; cursor: pointer; }
+.pc_wrap:hover { transform: scale(1.1) rotate(1deg); }
+.img_pc_main { width: 500px; height: auto; filter: drop-shadow(0 0 20px rgba(106, 150, 249, 0.3)); }
+
 .globito {
     background: rgba(106, 150, 249, 0.1);
     border: 2px solid #6a96f9;
     padding: 20px;
     border-radius: 15px;
-    transition: all 0.3s ease;
+    transition: 0.3s;
 }
+.globito:hover { transform: translateX(10px); background: #6a96f9; color: black; }
 
-.globito:hover {
-    transform: translateX(15px);
-    background: #6a96f9;
-    color: black;
-}
+/* ABOUT CARDS (Diseño azul/morado) */
+.cards_container { display: flex; gap: 25px; justify-content: center; flex-wrap: wrap; }
 
-/* --- ABOUT GRID --- */
-.about_grid { display: flex; gap: 20px; }
-.about_card {
-    border: 2px solid #6a96f9;
+.card {
+    background: #111;
     padding: 30px;
     border-radius: 20px;
-    width: 300px;
-    text-align: center;
+    width: 320px;
+    border: 3px solid transparent;
+    transition: transform 0.3s;
 }
+
+.card:hover { transform: translateY(-15px); }
+.card-blue { border-color: #00c6ff; box-shadow: 0 0 15px rgba(0, 198, 255, 0.2); }
+.card-purple { border-color: #6a5acd; box-shadow: 0 0 15px rgba(106, 90, 205, 0.2); }
+
+.card h3 { margin-bottom: 15px; font-size: 1.5rem; }
+.card-blue h3 { color: #00c6ff; }
+.card-purple h3 { color: #6a5acd; }
+.card ul { list-style: none; color: #ccc; line-height: 1.5; }
+
+/* CONTACT */
+.contact_text { font-size: 1.2rem; color: #8b949e; }
