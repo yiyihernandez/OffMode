@@ -7,26 +7,72 @@
     <title>Off-Mode Help App</title>
 </head>
 <body>
-    <div class="container">
-        <header class="hero">
-            <nav class="nav">
-                <div class="nav_brand">
-                    <a href="./" class="nav_logo-link">
-                        <img src="assets/alienigena.png" alt="Alien Logo" class="nav_logo">
-                    </a>
-                    <div class="nav_text">
-                        <span class="nav_title">Off-Mode</span>
-                        <span class="nav_subtitle">help app</span>
-                    </div>
+
+    <header class="header_nav">
+        <nav class="nav">
+            <div class="nav_brand">
+                <img src="assets/alienigena.png" alt="Logo" class="nav_logo_small">
+                <div class="nav_text">
+                    <span class="nav_title">Off-Mode</span>
+                    <span class="nav_subtitle">help app</span>
+                </div>
+            </div>
+            <ul class="nav_menu">
+                <li><a href="javascript:void(0)" onclick="mostrarPestaña('home')" class="nav_link">Home</a></li>
+                <li><a href="javascript:void(0)" onclick="mostrarPestaña('about')" class="nav_link">About</a></li>
+                <li><a href="javascript:void(0)" onclick="mostrarPestaña('contact')" class="nav_link">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="main_container">
+        
+        <section id="home" class="pestaña active">
+            <h1 class="main_title">¿Que hacemos <br> <span>bien y mal?</span></h1>
+            <div class="home_layout">
+                <div class="column">
+                    <div class="globito">1. Reducir el uso excesivo del celular.</div>
+                    <div class="globito">2. Recompensar al usuario por su esfuerzo.</div>
+                    <div class="globito">3. Ayudar a usar mejor su tiempo.</div>
                 </div>
 
-                <ul class="nav_menu">
-                    <li class="nav_item"><a href="./" class="nav_link">Home</a></li>
-                    <li class="nav_item"><a href="./" class="nav_link">About</a></li>
-                    <li class="nav_item"><a href="./" class="nav_link">Contact</a></li>
-                </ul>
-            </nav>
-        </header>
+                <div class="pc_container">
+                    <img src="assets/pcalien.png" alt="PC Alien" class="img_pc_main">
+                </div>
+
+                <div class="column">
+                    <div class="globito">1. El usuario debe estar convencido.</div>
+                    <div class="globito">2. Puede fallar sin disciplina.</div>
+                    <div class="globito">3. Crear un hábito toma tiempo.</div>
+                </div>
+            </div>
+        </section>
+
+        <section id="about" class="pestaña">
+            <h1 class="main_title">¿Por qué <span>elegirnos?</span></h1>
+            <div class="about_grid">
+                <div class="about_card">
+                    <h3>Narrativa</h3>
+                    <p>Personajes y misiones interactivas.</p>
+                </div>
+                <div class="about_card">
+                    <h3>Recompensas</h3>
+                    <p>Medallas y logros visuales.</p>
+                </div>
+                <div class="about_card">
+                    <h3>Motivación</h3>
+                    <p>Progreso visual constante.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="pestaña">
+            <h1 class="main_title"><span>Contáctanos</span></h1>
+            <p>Envíanos un mensaje para saber más sobre Off-Mode.</p>
+        </section>
+
     </div>
+
+    <script src="js/interaccion.js"></script>
 </body>
 </html>

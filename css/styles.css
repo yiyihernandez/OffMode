@@ -1,78 +1,86 @@
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-:root {
-    --color-header: #6a96f9; 
-}
-
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Arial', sans-serif;
+    background-color: #05070a;
+    color: white;
+    overflow: hidden; /* Evita scroll ya que usamos pestañas */
 }
 
-.nav {
-    display: flex;
+/* --- NAVEGACIÓN --- */
+.header_nav {
+    background-color: #6a96f9;
+    padding: 10px 5%;
+}
+.nav { display: flex; justify-content: space-between; align-items: center; }
+.nav_brand { display: flex; align-items: center; gap: 10px; }
+.nav_logo_small { width: 50px; }
+.nav_title { color: black; font-weight: bold; font-size: 1.4rem; }
+.nav_menu { display: flex; list-style: none; gap: 30px; }
+.nav_link { text-decoration: none; color: white; font-weight: bold; }
+.nav_link:hover { color: black; }
+
+/* --- LÓGICA DE PESTAÑAS --- */
+.pestaña {
+    display: none; /* Ocultas por defecto */
+    height: 90vh;
+    padding: 50px;
+    flex-direction: column;
     align-items: center;
-    justify-content: space-between;
-    padding: 5px 5%; 
-    background-color: var(--color-header);
-    color: rgb(0, 0, 0);
+    justify-content: center;
+    animation: fadeIn 0.5s ease;
 }
 
-.nav_brand {
-    display: flex;
-    align-items: center;
-    gap: 10px;
+.pestaña.active {
+    display: flex; /* Solo la activa se ve */
 }
 
-.nav_logo {
-    width: 60px; 
-    height: auto;
-    display: block;
-    transition: transform 0.3s ease;
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
 }
 
-.nav_logo:hover {
+/* --- HOME LAYOUT --- */
+.main_title { font-size: 3rem; text-align: center; margin-bottom: 40px; }
+.main_title span { color: #6a96f9; }
+
+.home_layout { display: flex; align-items: center; justify-content: space-around; width: 100%; }
+
+.pc_container { transition: transform 0.4s ease; }
+.img_pc_main { width: 550px; height: auto; }
+
+/* Efecto Agrandar PC */
+.pc_container:hover {
     transform: scale(1.1);
 }
 
-.nav_text {
-    display: flex;
-    flex-direction: column;
+.column { width: 25%; display: flex; flex-direction: column; gap: 20px; }
+
+/* Efecto Movimiento Globitos */
+.globito {
+    background: rgba(106, 150, 249, 0.1);
+    border: 2px solid #6a96f9;
+    padding: 20px;
+    border-radius: 15px;
+    transition: all 0.3s ease;
 }
 
-.nav_title {
-    font-size: 1.4rem;
-    font-weight: bold;
-    line-height: 1;
+.globito:hover {
+    transform: translateX(15px);
+    background: #6a96f9;
+    color: black;
 }
 
-.nav_subtitle {
-    color: white;
-    font-size: 0.9rem;
-    text-transform: lowercase;
-    opacity: 0.9;
-}
-
-
-.nav_menu {
-    display: flex;
-    list-style: none;
-    gap: 30px; 
-    margin-left: auto;
-}
-
-.nav_link {
-    text-decoration: none;
-    color: rgb(255, 255, 255);
-    font-weight: 500;
-    transition: color 0.3s ease; 
-}
-
-
-.nav_link:hover {
-    color: #07233f; 
-    text-decoration: none;
+/* --- ABOUT GRID --- */
+.about_grid { display: flex; gap: 20px; }
+.about_card {
+    border: 2px solid #6a96f9;
+    padding: 30px;
+    border-radius: 20px;
+    width: 300px;
+    text-align: center;
 }
