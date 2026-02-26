@@ -1,6 +1,6 @@
 # 🛸 Off-Mode
 
-### 👽 **Off-Mode: Pantalla apagada, alienígenas contentos, porque tu tiempo vale más que un "like", mejor pasa más tiempo dominando la galaxia.** 🛸
+### 👽 **Pantalla apagada, alienígenas contentos, porque tu tiempo vale más que un "like", mejor pasa más tiempo dominando la galaxia.** 🛸
 
 ---
 
