@@ -1,6 +1,6 @@
 Off-Mode
 
-🛸Pantalla apagada, alienígenas contentos, porque tu tiempo vale más que un "like", mejor pasa más tiempo dominando la galaxia. 🛸
+🛸Pantalla apagada, alienígenas contentos, porque tu tiempo vale más que un "like", mejor pasa más tiempo dominando la galaxia. 
 
 
 ¿Qué contiene?
@@ -26,9 +26,9 @@ Estructura del Cuartel General
 ├── assets/          # Imágenes (Alien, PC, Teléfonos)
 
 ├── css/
-│   └── styles.css   # Estilos, neones y animaciones
+  └── styles.css   # Estilos, neones y animaciones
 
-├── js/
-│   └── interaccion.js # El cerebro detrás de las transiciones
+├── js/  
+  └── interaccion.js # El cerebro detrás de las transiciones
 
 └── index.html       # La puerta de entrada a la galaxia
