@@ -4,12 +4,12 @@
 
 ---
 
-## 🛰️ ¿Qué contiene?
+## ¿Qué contiene?
 
 * **Navegación Dinámica (JS):** Utiliza una lógica de cambio de secciones en `interaccion.js` que gestiona la visibilidad de las pestañas sin recargar la página. Incluye un efecto de transición suave con `opacity 0.5s` y `setTimeout`.
 * **Interfaz Inmersiva:** Un diseño "Dark Mode" con una cabecera fija (`header_nav`) que resalta la sección activa cambiando el color del menú a negro.
 
-### 🎬 Componentes Visuales:
+### Componentes Visuales:
 
 * **Globitos de Texto:** Elementos en la Home que reaccionan al pasar el cursor con desplazamientos y cambios de color.
 * **Tarjetas:** Secciones de "About" con bordes de neón azul y púrpura que se elevan al interactuar con ellas.
@@ -25,7 +25,7 @@
 
 
 
-## 📂 Estructura del Cuartel General
+## Estructura del Cuartel General
 
 ```text
 ├── assets/      # Imágenes (Alien, PC, Teléfonos)
