@@ -1,6 +1,6 @@
 Off-Mode
 
-Pantalla apagada, alienígenas contentos, porque tu tiempo vale más que un "like", mejor pasa más tiempo dominando la galaxia. 🛸
+🛸Pantalla apagada, alienígenas contentos, porque tu tiempo vale más que un "like", mejor pasa más tiempo dominando la galaxia. 🛸
 
 
 ¿Qué contiene?
@@ -15,7 +15,7 @@ Componentes Visuales:
 -Trilogía de Dispositivos: Una composición visual en la sección de contacto con tres teléfonos escalados (330px y 260px) que crean un efecto de profundidad.
 -Animaciones: Incluye una animación de entrada (fade-in-page) que suaviza la carga inicial de la aplicación.
 
-💻 Tecnologías Alienígenas Utilizadas
+👽Tecnologías Alienígenas Utilizadas
 
 HTML5: Estructura de secciones, navegación y organización de activos.
 CSS3: Magia visual que incluye el uso de Flexbox, filtros de sombra (drop-shadow), transiciones y estados :hover.
@@ -24,8 +24,11 @@ JavaScript (Vanilla): Un controlador eficiente que manipula el DOM para coordina
 Estructura del Cuartel General
 
 ├── assets/          # Imágenes (Alien, PC, Teléfonos)
+
 ├── css/
 │   └── styles.css   # Estilos, neones y animaciones
+
 ├── js/
 │   └── interaccion.js # El cerebro detrás de las transiciones
+
 └── index.html       # La puerta de entrada a la galaxia
