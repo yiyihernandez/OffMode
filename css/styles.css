@@ -1,4 +1,3 @@
-/* RESET GENERAL */
 * {
     margin: 0;
     padding: 0;
@@ -9,10 +8,10 @@ body {
     font-family: 'Segoe UI', Arial, sans-serif;
     background-color: #05070a;
     color: white;
-    overflow: hidden; /* Mantenemos las pestañas fijas sin scroll */
+    overflow: hidden; 
 }
 
-/* NAVEGACIÓN */
+/* NAVEGACION */
 .header_nav {
     background-color: #6a96f9;
     padding: 10px 5%;
@@ -31,9 +30,9 @@ body {
 .nav_link { text-decoration: none; color: white; font-weight: bold; transition: 0.3s; }
 .nav_link:hover { color: black; }
 
-/* LÓGICA DE PESTAÑAS */
+/* LOGICA DE PESTAÑAS */
 .pestaña {
-    display: none; /* Oculto */
+    display: none;
     height: 100vh;
     width: 100%;
     flex-direction: column;
@@ -50,27 +49,33 @@ body {
     to { opacity: 1; }
 }
 
-.pestaña_titulo { font-size: 3rem; margin-bottom: 40px; text-align: center; }
+.pestaña_titulo { 
+    font-size: 5rem;      
+    font-weight: 800;   
+    margin-bottom: 20px; 
+    text-align: center; 
+    line-height: 1.1;   
+} 
 .pestaña_titulo span { color: #6a96f9; }
 
-/* HOME LAYOUT */
+/* HOME */
 .home_layout { display: flex; align-items: center; justify-content: space-between; width: 100%; }
 .column { width: 25%; display: flex; flex-direction: column; gap: 20px; }
 
 .pc_wrap { transition: transform 0.4s ease; cursor: pointer; }
 .pc_wrap:hover { transform: scale(1.1) rotate(1deg); }
-.img_pc_main { width: 500px; height: auto; filter: drop-shadow(0 0 20px rgba(106, 150, 249, 0.3)); }
+.img_pc_main { width: 1000px; height: auto; filter: drop-shadow(0 0 20px #6a5acd); }
 
 .globito {
     background: rgba(106, 150, 249, 0.1);
     border: 2px solid #6a96f9;
-    padding: 20px;
-    border-radius: 15px;
+    padding: 50px;
+    border-radius: 30px;
     transition: 0.3s;
 }
 .globito:hover { transform: translateX(10px); background: #6a96f9; color: black; }
 
-/* ABOUT CARDS (Diseño azul/morado) */
+/* ABOUT */
 .cards_container { display: flex; gap: 25px; justify-content: center; flex-wrap: wrap; }
 
 .card {
