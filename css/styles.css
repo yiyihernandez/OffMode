@@ -1,100 +1,63 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+/* --- RESET Y BASE --- */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Segoe UI', sans-serif; background-color: #05070a; color: white; overflow: hidden; }
 
-body {
-    font-family: 'Segoe UI', Arial, sans-serif;
-    background-color: #05070a;
-    color: white;
-    overflow: hidden; 
-}
+/* Animación de carga inicial */
+.fade-in-page { animation: fadeInOp 1.5s ease-out forwards; }
+@keyframes fadeInOp { from { opacity: 0; } to { opacity: 1; } }
 
-/* NAVEGACION */
-.header_nav {
-    background-color: #6a96f9;
-    padding: 10px 5%;
-    position: fixed;
-    top: 0;
-    width: 100%;
-    z-index: 1000;
-}
-
+/* --- HEADER Y LOGO CORREGIDO --- */
+.header_nav { background-color: #6a96f9; padding: 15px 6%; position: fixed; top: 0; width: 100%; z-index: 1000; }
 .nav { display: flex; justify-content: space-between; align-items: center; }
-.nav_brand { display: flex; align-items: center; gap: 10px; }
-.nav_logo_small { width: 45px; }
-.nav_title { color: black; font-weight: bold; font-size: 1.3rem; }
-.nav_subtitle { color: white; font-size: 0.8rem; display: block; }
-.nav_menu { display: flex; list-style: none; gap: 30px; }
-.nav_link { text-decoration: none; color: white; font-weight: bold; transition: 0.3s; }
-.nav_link:hover { color: black; }
+.nav_brand { display: flex; align-items: center; gap: 15px; cursor: pointer; }
+.nav_logo_header { width: 85px; }
+.nav_text { display: flex; flex-direction: column; } /* help app ABAJO de Off-Mode */
+.nav_title { color: black; font-weight: 900; font-size: 1.8rem; line-height: 0.9; }
+.nav_subtitle { color: white; font-size: 1rem; font-weight: 600; }
 
-/* LOGICA DE PESTAÑAS */
-.pestaña {
-    display: none;
-    height: 100vh;
-    width: 100%;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding: 100px 5% 20px 5%;
-    animation: fadeEffect 0.6s;
+.nav_menu { display: flex; list-style: none; align-items: center; }
+.nav_link { text-decoration: none; color: white; font-weight: 800; font-size: 1.2rem; padding: 0 20px; transition: 0.3s; }
+.nav_link.active_link { color: black !important; }
+.nav_separator { width: 2px; height: 35px; background-color: rgba(255, 255, 255, 0.4); margin: 0 10px; }
+
+/* --- TÍTULOS BICOLOR Y SIN MONTAR --- */
+.pestaña_titulo_estatico, .pestaña_titulo { 
+    font-size: 5.5rem; font-weight: 900; line-height: 1.2; /* Evita que choquen las líneas */
+    letter-spacing: 2px; text-transform: uppercase; 
+    margin-bottom: 40px; text-align: center; color: white; 
 }
+.pestaña_titulo_estatico span, .pestaña_titulo span { color: #6a96f9; } /* El azul de Off-Mode */
 
-.pestaña.active { display: flex; }
+/* --- SECCIONES --- */
+.pestaña { display: none; height: 100vh; flex-direction: column; align-items: center; justify-content: center; padding-top: 80px; opacity: 0; }
+.pestaña.active { display: flex; opacity: 1; }
 
-@keyframes fadeEffect {
-    from { opacity: 0; }
-    to { opacity: 1; }
-}
+/* --- HOME --- */
+.home_layout { display: flex; align-items: center; gap: 50px; }
+.img_pc_main { width: 550px; transition: 0.5s ease; }
+.pc_wrap:hover .img_pc_main { transform: scale(1.05) rotate(-2deg); filter: drop-shadow(0 0 20px #6a96f9); }
+.column { width: 320px; display: flex; flex-direction: column; gap: 20px; }
+.globito { background: rgba(106, 150, 249, 0.1); border: 2px solid #6a96f9; padding: 25px; border-radius: 20px; transition: 0.4s; line-height: 1.4; }
+.globito:hover { transform: translateX(10px); background: #6a96f9; color: black; font-weight: bold; }
 
-.pestaña_titulo { 
-    font-size: 5rem;      
-    font-weight: 800;   
-    margin-bottom: 20px; 
-    text-align: center; 
-    line-height: 1.1;   
-} 
-.pestaña_titulo span { color: #6a96f9; }
+/* --- ABOUT (GLOBOS NEÓN) --- */
+.cards_container { display: flex; gap: 30px; }
+.card { background: rgba(255, 255, 255, 0.03); padding: 35px; border-radius: 25px; width: 380px; border: 3px solid transparent; transition: 0.4s; }
+.card-blue { border-color: #00c6ff; }
+.card-blue:hover { box-shadow: 0 0 40px rgba(0, 198, 255, 0.5); transform: translateY(-15px); }
+.card-purple { border-color: #a855f7; }
+.card-purple:hover { box-shadow: 0 0 40px rgba(168, 85, 247, 0.5); transform: translateY(-15px); }
+.card h3 { font-size: 2rem; margin-bottom: 15px; color: #6a96f9; }
+.card-purple h3 { color: #a855f7; }
 
-/* HOME */
-.home_layout { display: flex; align-items: center; justify-content: space-between; width: 100%; }
-.column { width: 25%; display: flex; flex-direction: column; gap: 20px; }
+/* --- CONTACT (ESCALA ORIGINAL) --- */
+.contact_wrapper { display: flex; align-items: center; justify-content: space-between; width: 85%; max-width: 1400px; gap: 80px; }
+.contact_titulo_grande { font-size: 6rem; font-weight: 950; line-height: 1.1; margin-bottom: 20px; letter-spacing: 2px; }
+.sub_text_grande { font-size: 1.6rem; color: #bbb; margin-bottom: 30px; }
+.join_text_grande { font-size: 2.4rem; font-weight: 900; color: #6a96f9; }
 
-.pc_wrap { transition: transform 0.4s ease; cursor: pointer; }
-.pc_wrap:hover { transform: scale(1.1) rotate(1deg); }
-.img_pc_main { width: 1000px; height: auto; filter: drop-shadow(0 0 20px #6a5acd); }
-
-.globito {
-    background: rgba(106, 150, 249, 0.1);
-    border: 2px solid #6a96f9;
-    padding: 50px;
-    border-radius: 30px;
-    transition: 0.3s;
-}
-.globito:hover { transform: translateX(10px); background: #6a96f9; color: black; }
-
-/* ABOUT */
-.cards_container { display: flex; gap: 25px; justify-content: center; flex-wrap: wrap; }
-
-.card {
-    background: #111;
-    padding: 30px;
-    border-radius: 20px;
-    width: 320px;
-    border: 3px solid transparent;
-    transition: transform 0.3s;
-}
-
-.card:hover { transform: translateY(-15px); }
-.card-blue { border-color: #00c6ff; box-shadow: 0 0 15px rgba(0, 198, 255, 0.2); }
-.card-purple { border-color: #6a5acd; box-shadow: 0 0 15px rgba(106, 90, 205, 0.2); }
-
-.card h3 { margin-bottom: 15px; font-size: 1.5rem; }
-.card-blue h3 { color: #00c6ff; }
-.card-purple h3 { color: #6a5acd; }
-.card ul { list-style: none; color: #ccc; line-height: 1.5; }
-
-/* CONTACT */
-.contact_text { font-size: 1.2rem; color: #8b949e; }
+.phones_display { display: flex; align-items: flex-end; position: relative; }
+.phone { height: auto; transition: 0.5s ease; filter: drop-shadow(0 15px 30px rgba(0,0,0,0.6)); }
+.side_phone { width: 260px; transform: scale(0.85); opacity: 0.6; z-index: 1; }
+.center_phone { width: 330px; margin: 0 -70px; z-index: 5; cursor: pointer; }
+.center_phone:hover { transform: scale(1.1) translateY(-25px); filter: drop-shadow(0 0 30px #6a96f9); }

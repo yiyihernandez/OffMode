@@ -4,84 +4,75 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/styles.css">
-    <title>Off-Mode Help App</title>
+    <title>Off-Mode | Help App</title>
 </head>
 <body>
 
     <header class="header_nav">
         <nav class="nav">
-            <div class="nav_brand">
-                <img src="assets/alienigena.png" alt="Logo" class="nav_logo_small">
+            <div class="nav_brand" onclick="cambiarSeccion('home')">
+                <img src="assets/alienigena.png" alt="Logo" class="nav_logo_header">
                 <div class="nav_text">
                     <span class="nav_title">Off-Mode</span>
-                    <span class="nav_subtitle">Help app</span>
+                    <span class="nav_subtitle">help app</span>
                 </div>
             </div>
+            
             <ul class="nav_menu">
-                <li><a href="javascript:void(0)" onclick="mostrarPestaña('home')" class="nav_link">Home</a></li>
-                <li><a href="javascript:void(0)" onclick="mostrarPestaña('about')" class="nav_link">About</a></li>
-                <li><a href="javascript:void(0)" onclick="mostrarPestaña('contact')" class="nav_link">Contact</a></li>
+                <li class="nav_separator"></li>
+                <li><a href="javascript:void(0)" onclick="cambiarSeccion('home')" class="nav_link active_link" data-sec="home">Home</a></li>
+                <li class="nav_separator"></li>
+                <li><a href="javascript:void(0)" onclick="cambiarSeccion('about')" class="nav_link" data-sec="about">About</a></li>
+                <li class="nav_separator"></li>
+                <li><a href="javascript:void(0)" onclick="cambiarSeccion('contact')" class="nav_link" data-sec="contact">Contact</a></li>
+                <li class="nav_separator"></li>
             </ul>
         </nav>
     </header>
 
-    <main class="main_content">
-        
+    <main class="main_content fade-in-page">
         <section id="home" class="pestaña active">
-            <h1 class="pestaña_titulo">¿Qué hacemos <br> <span>bien y mal?</span></h1>
+            <h1 class="pestaña_titulo_estatico">¿Qué hacemos <br> <span>bien y mal?</span></h1>
             <div class="home_layout">
                 <div class="column">
                     <div class="globito">1. Reducir el uso excesivo del celular.</div>
-                    <div class="globito">2. Recompesar al usuario por su esfuerzo.</div>
+                    <div class="globito">2. Recompensar al usuario por su esfuerzo.</div>
                     <div class="globito">3. Ayudar a usar mejor su tiempo.</div>
                 </div>
-
                 <div class="pc_wrap">
                     <img src="assets/pcalien.png" alt="PC Alien" class="img_pc_main">
                 </div>
-
                 <div class="column">
                     <div class="globito">1. El usuario debe estar convencido.</div>
                     <div class="globito">2. Puede fallar sin disciplina.</div>
-                    <div class="globito">3. Crear un habito toma tiempo.</div>
+                    <div class="globito">3. Crear un hábito toma tiempo.</div>
                 </div>
             </div>
         </section>
 
         <section id="about" class="pestaña">
-            <h1 class="pestaña_titulo">¿Por qué <span>elegirnos?</span></h1>
+            <h1 class="pestaña_titulo">¿Por qué <br> <span>elegirnos?</span></h1>
             <div class="cards_container">
-                <div class="card card-blue">
-                    <h3>Narrativa</h3>
-                    <ul>
-                        <li>Personajes y misiones interactivas que te acompañan en tu proceso.</li>
-                        <li>Historia evolutiva basada en tus logros.</li>
-                    </ul>
-                </div>
-
-                <div class="card card-purple">
-                    <h3>Recompensas</h3>
-                    <ul>
-                        <li>Premios visuales, medallas y personalización de tu alien.</li>
-                        <li>Sistema de puntos por tiempo fuera del móvil.</li>
-                    </ul>
-                </div>
-
-                <div class="card card-blue">
-                    <h3>Motivación</h3>
-                    <ul>
-                        <li>Gráficas de progreso visual fáciles de entender.</li>
-                        <li>Recordatorios positivos diarios.</li>
-                    </ul>
-                </div>
+                <div class="card card-blue"><h3>Narrativa</h3><p>Misiones interactivas que te acompañan.</p></div>
+                <div class="card card-purple"><h3>Recompensas</h3><p>Premios visuales y personalización de avatar.</p></div>
+                <div class="card card-blue"><h3>Motivación</h3><p>Gráficas de progreso fáciles de entender.</p></div>
             </div>
         </section>
 
         <section id="contact" class="pestaña">
-            <h1 class="pestaña_titulo"><span>Contactanos</span></h1>
-            <p class="contact_text">¿Tienes dudas? Escríbenos y únete a la comunidad Off-Mode.</p>
+            <div class="contact_wrapper">
+                <div class="contact_info">
+                    <h1 class="contact_titulo_grande">CONTÁCTANOS</h1>
+                    <p class="sub_text_grande">¡Estamos aquí para ayudarte a desconectarte!</p>
+                    <h2 class="join_text_grande">¡Únete a la comunidad!</h2>
+                </div>
+                <div class="phones_display">
+                    <img src="assets/telefono.png" class="phone side_phone">
+                    <img src="assets/telefono.png" class="phone center_phone">
+                    <img src="assets/telefono.png" class="phone side_phone">
+                </div>
+            </div>
         </section>
-
     </main>
 
     <script src="js/interaccion.js"></script>
